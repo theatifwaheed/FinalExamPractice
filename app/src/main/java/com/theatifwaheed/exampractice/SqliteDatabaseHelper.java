@@ -25,8 +25,6 @@ public class SqliteDatabaseHelper extends SQLiteOpenHelper {
         mainContext = context;
     }
 
-
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
