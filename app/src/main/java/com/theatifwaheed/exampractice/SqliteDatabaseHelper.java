@@ -15,7 +15,8 @@ public class SqliteDatabaseHelper extends SQLiteOpenHelper {
     private static String DATABASE_NAME = "studentDetails.db";
     private static int DATABASE_VERSION = 1;
     private static String TABLENAME = "studentinfo";
-    private String query_createTable = "create table " + TABLENAME + " (std_id TEXT primary key,"+
+    private String query_createTable = "create table " + TABLENAME + " (" +
+            "std_id TEXT primary key,"+
             "std_name TEXT, std_image BLOB)";
     private String query_selectTable = "select * from " + TABLENAME;
     Context mainContext;
