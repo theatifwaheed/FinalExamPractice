@@ -79,7 +79,7 @@ public class SqliteDatabaseHelper extends SQLiteOpenHelper {
     public String getStudentName_byId(String s_id){
         SQLiteDatabase sql_db = this.getWritableDatabase();
         Cursor cursor = sql_db.rawQuery(query_selectTable + " where std_id = ?",
-                new String[]{s_id});
+                new String []{s_id});
         cursor.moveToFirst();
         return cursor.getString(1);
     }
