@@ -74,23 +74,28 @@ public class insertDataAct extends AppCompatActivity implements AdapterView.OnIt
             public void onClick(View v) {
                 String id = editText_id.getText().toString();
                 String name = editText_name.getText().toString();
+                boolean insertFlag = sqliteDatabaseHelper.insertData(id,name);
+                if (insertFlag==true){
+
+                }
                 if (pos == 0){
                     Toast.makeText(insertDataAct.this, "Select the Right Image",
                             Toast.LENGTH_SHORT).show();
                 }
+
                 else if (pos == 1){
                     Bitmap imageBitmap;
                     imageBitmap = BitmapFactory.decodeResource(getResources(),R.drawable.p1);
                     ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
                     imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
                     byte [] img = byteArray.toByteArray();
-                    boolean insertFlag = sqliteDatabaseHelper.insertData(id,name,img);
-                    if (insertFlag==true)
-                        Toast.makeText(insertDataAct.this, "Saved",
-                                Toast.LENGTH_SHORT).show();
-                    else
-                        Toast.makeText(insertDataAct.this, "Not Saved",
-                                Toast.LENGTH_SHORT).show();
+//                    boolean insertFlag = sqliteDatabaseHelper.insertData(id,name,img);
+//                    if (insertFlag==true)
+//                        Toast.makeText(insertDataAct.this, "Saved",
+//                                Toast.LENGTH_SHORT).show();
+//                    else
+//                        Toast.makeText(insertDataAct.this, "Not Saved",
+//                                Toast.LENGTH_SHORT).show();
                 }
                 else if (pos == 2){
                     Bitmap imageBitmap;
@@ -98,11 +103,11 @@ public class insertDataAct extends AppCompatActivity implements AdapterView.OnIt
                     ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
                     imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
                     byte [] img = byteArray.toByteArray();
-                    boolean insertFlag = sqliteDatabaseHelper.insertData(id,name,img);
-                    if (insertFlag==true)Toast.makeText(insertDataAct.this, "Saved",
-                            Toast.LENGTH_SHORT).show();
-                    else Toast.makeText(insertDataAct.this, "Not Saved",
-                            Toast.LENGTH_SHORT).show();
+//                    boolean insertFlag = sqliteDatabaseHelper.insertData(id,name,img);
+//                    if (insertFlag==true)Toast.makeText(insertDataAct.this, "Saved",
+//                            Toast.LENGTH_SHORT).show();
+//                    else Toast.makeText(insertDataAct.this, "Not Saved",
+//                            Toast.LENGTH_SHORT).show();
                 }
             }
         });

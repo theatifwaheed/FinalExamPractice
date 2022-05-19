@@ -41,14 +41,14 @@ public class SqliteDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean insertData(String s_id, String s_name, byte [] s_image){
+    public boolean insertData(String s_id, String s_name){
         Toast.makeText(mainContext, "Id: "+s_id +" Name: "+s_name, Toast.LENGTH_SHORT).show();
-        Toast.makeText(mainContext, "Image: " + s_image, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(mainContext, "Image: " + s_image, Toast.LENGTH_SHORT).show();
         SQLiteDatabase sql_db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("std_id", s_id);
         contentValues.put("std_name", s_name);
-        contentValues.put("std_image", s_image);
+//        contentValues.put("std_image", s_image);
         long checkInsert = sql_db.insert(TABLENAME, null, contentValues);
         Toast.makeText(mainContext, "Insert Rank: " + checkInsert, Toast.LENGTH_SHORT).show();
         if (checkInsert == -1) return false;
